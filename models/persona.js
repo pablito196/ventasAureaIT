@@ -1,6 +1,6 @@
 import mongoose, {Schema} from 'mongoose';
 const personaSchema = new Schema({
-    empresa: {type: Schema.ObjectId, ref:'empresa'},
+    empresa: {type: Schema.ObjectId, ref:'empresa',required:true},
     tipoPersona:{type:String,maxlength:20,required:true},
     nombres:{type:String,maxlength:80,unique:true,required:true},
     documento:{type:String,maxlength:20},

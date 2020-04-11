@@ -1,13 +1,12 @@
 import mongoose,{Schema} from 'mongoose';
-const proveedorSchema = new Schema({
+const clienteSchema = new Schema({
     empresa: {type: Schema.ObjectId, ref:'empresa',required:true},
     nombre:{type:String,maxlength:120,required:true},
     nit:{type:String,maxlength:20},
     direccion:{type:String,maxlength:70},
     telefono:{type:String,maxlength:20},
     email:{type:String,maxlength:50,unique:true},
-    rubro:{type:String,maxlength:80},
-    saldoAcreedor:{type:Number},
+    saldoDeudor:{type:Number},
     dato:[{
         nombre:{
             type:String,
@@ -24,6 +23,6 @@ const proveedorSchema = new Schema({
     
 });
 
-const Proveedor = mongoose.model('proveedor',proveedorSchema);
+const Cliente = mongoose.model('cliente',clienteSchema);
 
-export default Proveedor; 
+export default Cliente; 

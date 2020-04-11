@@ -11,7 +11,7 @@ import mongoose from 'mongoose';
 //conexion a la bd
 mongoose.Promise = global.Promise;
 const dbUrl = 'mongodb://localhost:27017/VentasAureaIt';
-mongoose.connect(dbUrl, {useCreateIndex:true, useNewUrlParser: true})
+mongoose.connect(dbUrl, {useCreateIndex:true, useNewUrlParser: true, useUnifiedTopology: true})
 .then(mongoose => console.log('Conectado a la BD VentasAureaIt'))
 .catch(err => console.log(err));
 ///

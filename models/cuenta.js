@@ -1,7 +1,7 @@
 import mongoose,{Schema} from 'mongoose';
 
 const cuentaSchema = new Schema({
-    empresa: {type: Schema.ObjectId, ref:'empresa'},
+    empresa: {type: Schema.ObjectId, ref:'empresa',required:true},
     numeroCuenta:{type:String, maxlength:50, unique:true, required:trueString},
     banco:{type:String, maxlength:100, required:true},
     descripcion:{type:String, maxlength:255},
