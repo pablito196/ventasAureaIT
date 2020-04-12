@@ -6,7 +6,7 @@ import cors from 'cors';
 //const cors = require('cors');
 import path from 'path';
 import mongoose from 'mongoose';
-//import router from './routes';
+import router from './routes';
 
 //conexion a la bd
 mongoose.Promise = global.Promise;
@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,'public')));
 
-//app.use('/api',router);
+app.use('/api',router);
 app.set('port',process.env.PORT || 3000)
 
 app.listen(app.get('port'),()=>{
